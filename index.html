@@ -42,7 +42,7 @@
    <div class="container">
         <div class="calculator">
             <div class="skull">💀💀💀</div>
-            <input type="text" id="display" class="form-control mb-2 text-center">
+            <input type="text" id="display" class="form-control mb-1 text-center">
             <div class="row">
                 <button class="btn col-2" onclick="clearDisplay()">C</button>
                 <button class="btn col-2" onclick="appendToDisplay('(')">(</button>
@@ -89,6 +89,17 @@
             document.getElementById("display").value = "Error";
         }
     }
+ /// API for scientific calulcations COnfusing to work--- need to change or simplfy///  
+async function useAI() {
+    let expression = document.getElementById("display").value;
+    let response = await fetch ('https://api.mathjs.org/v4/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ expr: expression })
+    });
+    let result = await response.json();
+    document.getElementById("display").value = result.result;
+}
    </script>
 </body>
 </html>
