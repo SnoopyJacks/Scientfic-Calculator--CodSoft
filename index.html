@@ -13,7 +13,7 @@
     }
 
     .calculator {
-        max-width: 600px;
+        max-width: 400px;
         margin: 50px auto;
         padding: 20px;
         border-radius: 12px;
@@ -28,7 +28,7 @@
         margin: 5px;
         padding: 12px;
         font-size: 18px;
-        width: 20%;
+        width: 22%;
     }
     .btn:hover {
         background: white;
@@ -38,12 +38,13 @@
         height: 50px;
         font-size: 22px;
         margin: 15px;
-        text-align: right;
+        text-align: left;
         padding: 10px;
         border-radius: 5px;
         background: #333;
         color: white;
         border:none;
+        width: 100%
     }
 </style>
 </head>
@@ -51,7 +52,7 @@
 
    <h1> Scientific Calculator</h1> 
         <div class="calculator">
-            <input type="text" id="display" class="form-control mb-2 read-only">
+            <input type="text" id="display" class="form-control mb-2 readonly">
             <div class="row">
                 <button class="btn col-2" onclick="clearDisplay()">C</button>
                 <button class="btn col-2" onclick="appendToDisplay('(')">(</button>
@@ -80,7 +81,6 @@
                 <button class="btn col-2" onclick="appendToDisplay('0')">0</button>
                 <button class="btn col-2" onclick="appendToDisplay('.')">.</button>
                 <button class="btn col-2" onclick="calculate()">=</button>
-                <button class="btn col-2" onclick="useAI()">AI</button>
             </div>
             <div class="row">
                 <button class="btn col-2" onclick="appendToDisplay('sin(')">sin</button>
@@ -104,17 +104,6 @@
             document.getElementById("display").value = "Error";
         }
     }
- /// API for scientific calulcations COnfusing to work--- need to change or simplfy///  
-async function useAI() {
-    let expression = document.getElementById("display").value;
-    let response = await fetch ('https://api.mathjs.org/v4/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ expr: expression })
-    });
-    let result = await response.json();
-    document.getElementById("display").value = result.result;
-}
    </script>
 </body>
 </html>
