@@ -37,14 +37,15 @@
     #display {
         height: 50px;
         font-size: 22px;
-        margin: 15px;
-        text-align: left;
+        margin: 0 auto 15px;
+        text-align: right;
         padding: 10px;
         border-radius: 5px;
         background: #333;
         color: white;
         border:none;
-        width: 100%
+        width: 100%;
+        display: block;
     }
 </style>
 </head>
@@ -58,34 +59,34 @@
                 <button class="btn col-2" onclick="appendToDisplay(')')">)</button>
                 <button class="btn col-2" onclick="appendToDisplay('/')">/</button>
             </div>
-            <div class="row">
+            <div class="row justify-content-center">
                 <button class="btn col-2" onclick="appendToDisplay('7')">7</button>
                 <button class="btn col-2" onclick="appendToDisplay('8')">8</button>
                 <button class="btn col-2" onclick="appendToDisplay('9')">9</button>
                 <button class="btn col-2" onclick="appendToDisplay('*')">*</button>
             </div>
-            <div class="row">
+            <div class="row justify-content-center">
                 <button class="btn col-2" onclick="appendToDisplay('4')">4</button>
                 <button class="btn col-2" onclick="appendToDisplay('5')">5</button>
                 <button class="btn col-2" onclick="appendToDisplay('6')">6</button>
                 <button class="btn col-2" onclick="appendToDisplay('-')">-</button>
             </div>
-            <div class="row">
+            <div class="row justify-content-center">
                 <button class="btn col-2" onclick="appendToDisplay('1')">1</button>
                 <button class="btn col-2" onclick="appendToDisplay('2')">2</button>
                 <button class="btn col-2" onclick="appendToDisplay('3')">3</button>
                 <button class="btn col-2" onclick="appendToDisplay('+')">+</button>
             </div>
-            <div class="row">
+            <div class="row justify-content-center">
                 <button class="btn col-2" onclick="appendToDisplay('0')">0</button>
                 <button class="btn col-2" onclick="appendToDisplay('.')">.</button>
-                <button class="btn col-2" onclick="calculate()">=</button>
+                <button class="btn col-2" onclick="appendToDisplay('sqrt(')">√</button>
             </div>
-            <div class="row">
+            <div class="row justify-content-center">
                 <button class="btn col-2" onclick="appendToDisplay('sin(')">sin</button>
                 <button class="btn col-2" onclick="appendToDisplay('cos(')">cos</button>
                 <button class="btn col-2" onclick="appendToDisplay('tan(')">tan</button>
-                <button class="btn col-2" onclick="appendToDisplay('sqrt(')">√</button>
+                <button class="btn col-2" onclick="calculate()" style="height: 47%">=</button>
             </div>
         </div>
    </div>
