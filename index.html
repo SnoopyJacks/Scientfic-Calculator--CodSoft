@@ -50,46 +50,40 @@
 </style>
 </head>
 <body>
-   <h1> Scientific Calculator</h1> 
-        <div class="calculator">
-            <input type="text" id="display" class="form-control mb-2 readonly">
-            <div class="row">
-                <button class="btn col-2" onclick="clearDisplay()">C</button>
-                <button class="btn col-2" onclick="appendToDisplay('(')">(</button>
-                <button class="btn col-2" onclick="appendToDisplay(')')">)</button>
-                <button class="btn col-2" onclick="appendToDisplay('/')">/</button>
-            </div>
-            <div class="row justify-content-center">
-                <button class="btn col-2" onclick="appendToDisplay('7')">7</button>
-                <button class="btn col-2" onclick="appendToDisplay('8')">8</button>
-                <button class="btn col-2" onclick="appendToDisplay('9')">9</button>
-                <button class="btn col-2" onclick="appendToDisplay('*')">*</button>
-            </div>
-            <div class="row justify-content-center">
-                <button class="btn col-2" onclick="appendToDisplay('4')">4</button>
-                <button class="btn col-2" onclick="appendToDisplay('5')">5</button>
-                <button class="btn col-2" onclick="appendToDisplay('6')">6</button>
-                <button class="btn col-2" onclick="appendToDisplay('-')">-</button>
-            </div>
-            <div class="row justify-content-center">
-                <button class="btn col-2" onclick="appendToDisplay('1')">1</button>
-                <button class="btn col-2" onclick="appendToDisplay('2')">2</button>
-                <button class="btn col-2" onclick="appendToDisplay('3')">3</button>
-                <button class="btn col-2" onclick="appendToDisplay('+')">+</button>
-            </div>
-            <div class="row justify-content-center">
-                <button class="btn col-2" onclick="appendToDisplay('0')">0</button>
-                <button class="btn col-2" onclick="appendToDisplay('.')">.</button>
-                <button class="btn col-2" onclick="appendToDisplay('sqrt(')">√</button>
-            </div>
-            <div class="row justify-content-center">
-                <button class="btn col-2" onclick="appendToDisplay('sin(')">sin</button>
-                <button class="btn col-2" onclick="appendToDisplay('cos(')">cos</button>
-                <button class="btn col-2" onclick="appendToDisplay('tan(')">tan</button>
-                <button class="btn col-2" onclick="calculate()" style="height: 47%">=</button>
-            </div>
+    <h1>Scientific Calculator</h1>
+    <div class="calculator">
+        <input type="text" id="display" class="form-control mb-2 readonly">
+        <div class="row">
+            <button class="btn col-3" onclick="clearDisplay()">C</button>
+            <button class="btn col-3" onclick="appendToDisplay('sqrt(')">√</button>
+            <button class="btn col-3" onclick="appendToDisplay('%')">%</button>
+            <button class="btn col-3" onclick="appendToDisplay('/')">/</button>
         </div>
-   </div>
+        <div class="row">
+            <button class="btn col-3" onclick="appendToDisplay('7')">7</button>
+            <button class="btn col-3" onclick="appendToDisplay('8')">8</button>
+            <button class="btn col-3" onclick="appendToDisplay('9')">9</button>
+            <button class="btn col-3" onclick="appendToDisplay('*')">×</button>
+        </div>
+        <div class="row">
+            <button class="btn col-3" onclick="appendToDisplay('4')">4</button>
+            <button class="btn col-3" onclick="appendToDisplay('5')">5</button>
+            <button class="btn col-3" onclick="appendToDisplay('6')">6</button>
+            <button class="btn col-3" onclick="appendToDisplay('-')">−</button>
+        </div>
+        <div class="row">
+            <button class="btn col-3" onclick="appendToDisplay('1')">1</button>
+            <button class="btn col-3" onclick="appendToDisplay('2')">2</button>
+            <button class="btn col-3" onclick="appendToDisplay('3')">3</button>
+            <button class="btn col-3" onclick="appendToDisplay('+')">+</button>
+        </div>
+        <div class="row">
+            <button class="btn col-3" onclick="appendToDisplay('0')">0</button>
+            <button class="btn col-3" onclick="appendToDisplay('.')">.</button>
+            <button class="btn col-3" onclick="backspace()">⌫</button>
+            <button class="btn col-3" onclick="calculate()">=</button>
+        </div>
+    </div>
    <footer>
     This was created by <a href="https://github.com/SnoopyJacks" target="_blank"> Justine Ziola </a> and open-sourced on 
         <a href="https://github.com/SnoopyJacks/Scientfic-Calculator--CodSoft" target="_blank">GitHub</a> and hosted on <a href="https://jzcodsoftcalculator.netlify.app" target="_blank">Netlify</a>.
@@ -100,6 +94,10 @@
     }
     function clearDisplay(){
         document.getElementById("display").value = "";
+    }
+    function backspace() {
+        let display = document.getElementById("display");
+        display.value = display.value.slice(0,-1);
     }
     function calculate() {
         try {
